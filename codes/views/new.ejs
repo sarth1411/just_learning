@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Member</title>
+</head>
+<body>
+    <h1>Hello!!</h1>
+    <form method="POST" action="/candidate">
+        <label for="name">name of the candidate: </label>
+        <input type="text" name="name" id="name" placeholder="name">
+        <label for="age">age: </label>
+        <input type="number" name="age" id="age" placeholder="age">
+        <label for="graduation_degree">graduation: </label>
+        <input type="text" name="graduation_degree" id="graduation_degree" placeholder="your degree name">
+        <label for="postgraduation_degree">post-graduation: </label>
+        <input type="text" name="postgraduation_degree" id="postgraduation_degree" placeholder="your pg degree(if have done)" multiple>
+        <label for="skills">skills: </label>
+        <input type="text" name="skills" id="skills" placeholder="skills" multiple>
+        <label for="past_joined_company">past company: </label>
+        <input type="text" name="past_joined_company" id="past_joined_company" placeholder="past company" multiple>
+        <label for="intrested_company">companies want to join: </label>
+        <input type="text" name="intrested_company" id="intrested_company" placeholder="companies" multiple>
+        <button>submit</button>
+    </form>    
+</body>
+</html>

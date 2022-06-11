@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+</head>
+<body>
+    <p>Name : <%= found.name %> </p>
+    <p>Age : <%= found.age %> </p>
+    <p>Skills : <%= found.skills %> </p>
+    <p>Graduation : <%= found.graduation_degree %> </p>
+    <p>Post-Graduation : <%= found.postgraduation_degree %> </p>
+    <p>Past joined company : <%= found.past_joined_company %> </p>
+    <p>Intrested company : <%= found.intrested_company %> </p>
+    <p>your posts here!!!!!</p>
+    <% if(allpostoffound!=undefined){ %>
+        <% for(let post of allpostoffound){ %>
+            <p><%= post.postData %> </p>
+            <form method="POST" action="/candidate/<%= found._id%>/<%= post._id %>/post?_method=DELETE ">
+                <button>Delete</button>
+            </form>
+            <% } %>  
+        <% } %>  
+<form method="POST" action="/candidate/<%= found._id %>/post" >
+   <label for="post">Post here!!</label>
+    <input type="text" id="post" name="post">
+</form>
+</body>
+</html>

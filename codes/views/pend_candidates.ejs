@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pending candidates</title>
+</head>
+
+<body>
+    <h1>wait for sometime!!!we will contact you soon</h1>
+    <table>
+        <tr>
+            <th>index</th>
+            <th>candidate name</th>
+            <th>skills</th>
+            <th>verify/delete</th>
+        </tr>
+        <% let i=1; %>
+            <% for(let candidate of candidates){ %>
+                <tr>
+                    <td>
+                        <%= i++ %>
+                    </td>
+                    <td>
+                       <a href="/candidate/<%= candidate._id%>/show"><%= candidate.name %></a>
+                    </td>
+                    <td>
+                        <%= candidate.skills %>
+                        <%= candidate.checked  %> 
+                    </td>
+                    <td>
+                        <form method="POST" action="/pend_candidates/<%= candidate._id %>/verify?_method=PUT ">
+                            <button name="checked" value="true">verify</button>
+                        </form>
+                        <form action="/candidate/<%= candidate._id %>?_method=DELETE" method="POST">
+                            <button>DELETE</button>
+                        </form>
+                    </td>
+                </tr>
+                <% } %>
+    </table>
+</body>
+
+</html>
